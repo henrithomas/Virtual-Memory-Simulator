@@ -1,9 +1,5 @@
 //
-//  main.c
-//  OS - HW6
-//
 //  Created by Henri Thomas on 12/8/17.
-//  Copyright © 2017 Henri Thomas. All rights reserved.
 //
 #include <stdbool.h>
 #include <stdio.h>
@@ -201,7 +197,6 @@ void loop_VMSim(void)
        	vm_request_copy = vm_request;
        	offset = getbits(vm_request, 11, 12);
        	page_table_index = getbits(vm_request_copy, 15, 4);
-       	//printf("PT index: %d offset: %d\n",page_table_index,offset);
       	physical_page = getPhysicalPageframe(page_table_index, read_write);
        	completePhysicalAddress(physical_page, offset);
 	free(lineIn);
